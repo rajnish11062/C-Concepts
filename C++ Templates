@@ -1,0 +1,24 @@
+1) Function Templates
+template<typename T>
+T max(const T &a, const T &b)
+{
+    return a>=b ? a : b;
+}
+
+Note : It can be used for premitive data type as well as for User defined data types. 
+For using it for user defined type we must define >= operator in user defined class or type.
+
+Usage :
+a) for primitive types
+    // for Integers
+    int a=5,b=10;
+    cout<<max<int>(a,b);
+    //for floats
+    float a=5.5,b=10.3;
+    cout<<max<float>(a,b);
+b) For user defined class 
+
+
+2) Class Tempaltes 
+
+
