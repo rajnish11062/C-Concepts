@@ -17,7 +17,26 @@ a) for primitive types
     float a=5.5,b=10.3;
     cout<<max<float>(a,b);
 b) For user defined class 
+    overloading ">=" and "<<" operator in this class , so that we can use max function on this class objects .
+    class Test {
+        int a;
+        public :
+            Test():a(0){}
+            Test(int x,int y):a(x){};
+            bool operator >= (Test &obj){
+                return this->a >= obj.a ;
+            }
+        friend std::ostream &operator <<(std::ostream &os , Test &obj);
+    };
 
+    std::ostream &operator << (std::ostream &os , Test &obj){
+        return os<<obj;
+    }
+
+    Now we can use our max function for comparing Test class objects.
+    Test a(5);
+    Test b(10);
+    cout<<max<Test>(a,b);
 
 2) Class Tempaltes 
 
